@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlpineJS Counter Widget</title>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2" defer></script>
+    <style>
+        .counter {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .counter-button {
+            margin-right: 5px;
+            padding: 8px 12px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #462525;
+            background-color: hwb(0 91% 4%);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .counter-button:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div x-data="{ count: 0 }">
+        <h1>AlpineJS Counter Widget</h1>
+        <h2>Counter</h2>
+        <div class="counter" x-text="count"></div>
+        <div>
+            <button class="counter-button" @click="count += 1">+</button>
+            <button class="counter-button" @click="count -= 1" :disabled="count === 0">-</button>
+        </div>
+    </div>
+</body>
+</html>
